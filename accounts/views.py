@@ -179,7 +179,7 @@ def vendor_register(request):
         Hotel_Vendor.set_password(password)
         Hotel_Vendor.save()
         sendEmail(email,Hotel_Vendor.email_token)
-        messages.success(request,"An email is  sent to your email..!")
+        messages.success(request,"Send request to admin to verify your mail..!")
         return redirect('/account/vendor_login')
     return render(request,'vendor/vendor_register.html')
 
