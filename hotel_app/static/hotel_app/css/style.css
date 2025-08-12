@@ -363,6 +363,9 @@ body {
     height: 41px;
     width: 368px;
   }
+  .login-wrapper .pass i {
+    margin-left: -115px;
+}
 }
 /* ---------------alert----------- */
 .alert {
@@ -528,7 +531,7 @@ ul {
       padding: 20px 10px;
     }
     .login-wrapper .pass i{
-      margin-left: -105px;
+      margin-left: -135px;
     }
   }
   
