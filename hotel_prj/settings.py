@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7rwndw#hwmeti5^2j-8rw!j0b5lke#pmws)a7e^399nrmglpfr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','.now.sh']
 
@@ -92,9 +92,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'railway',  
         'USER': 'root',     
-        'PASSWORD': 'ClxWJLlNOztbeSEjpLzZNCtjTHGkhhtt', 
-        'HOST': 'gondola.proxy.rlwy.net',
-        'PORT': '15019',                 
+        'PASSWORD': 'cKLbVHqHfEGbsxXJNgiahDblOPSHmYKE', 
+        'HOST': 'caboose.proxy.rlwy.net',
+        'PORT': '37983',                 
     }
 }
 
