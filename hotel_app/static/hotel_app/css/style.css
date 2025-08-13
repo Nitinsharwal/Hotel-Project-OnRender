@@ -314,7 +314,6 @@ body {
   max-width: 400px;  
   padding: 2rem;
   border-radius: 8px;
-  backdrop-filter: blur(4px);
   box-shadow: 0 2px 10px rgb(0, 0, 0); 
 }
 
@@ -365,6 +364,10 @@ body {
   }
   .login-wrapper .pass i {
     margin-left: -135px;
+  
+    .login-form a.vendor_re {
+      margin: 0 0 0px 119px;
+  }
 }
 }
 /* ---------------alert----------- */
@@ -505,8 +508,8 @@ ul {
       flex-direction: column;
       position: absolute;
       top: 90px;
-      margin-left: 254px;
-      width: 30%;
+      margin-left: 242px;
+      width: 27%;
       display: none;
     }
 
@@ -529,9 +532,6 @@ ul {
     }
     .about-container {
       padding: 20px 10px;
-    }
-    .login-wrapper .pass i{
-      margin-left: -135px;
     }
   }
   

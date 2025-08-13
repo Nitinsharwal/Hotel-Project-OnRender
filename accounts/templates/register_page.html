@@ -3,7 +3,7 @@
 {% block body %}
 <div class="login-wrapper " style="background-color: antiquewhite;">
     <form class="login-form" method="POST">
-      <a href="{% url "vendor_register" %}" style="color: rgb(0, 0, 0); text-decoration: none;margin: 0px 0px -12px 260px">Register as Vendor</a>
+      <a class="vendor_re" href="{% url "vendor_register" %}" style="color: rgb(0, 0, 0); margin: 0px 0px 0rpx 119px;">Register as Vendor</a>
       <h2>Register</h2>
       {% csrf_token %}
       <label for="firstname">Firstname</label>
