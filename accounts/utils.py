@@ -11,7 +11,7 @@ def random_token():
 def sendEmail(email, token):
     subject = "Verify your email address"
     message = f"""Hi, please verify your email before login using the link below:
-https://sharwal-hotel-management.vercel.app/account/verify-account/{token}
+https://sharwal-nitin-hotel.vercel.app/account/verify-account/{token}
 """
     send_mail(
         subject,
