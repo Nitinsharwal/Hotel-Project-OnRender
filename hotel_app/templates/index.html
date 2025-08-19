@@ -2,17 +2,25 @@
 {% block title %}Home{% endblock title %}
 {% load static %}
 {% block body %}
-<h1>Best Hotels with best offer price</h1>
-<form method="GET" class="search-sort-container">
-  <input type="text" name="search" id="searchInput" placeholder="Search hotels...">
-  <button type="submit" id="searchBtn" style="cursor: pointer;">Search</button>
+<div class="hoteltext">
+<h1>Best Hotels with Best Offer Price</h1>
+</div>
 
-  <select style="max-width: 110px; cursor: pointer;" id="sortBy" name="sort">
+<form method="GET" class="search-sort-container">
+  <div class="search-bar">
+    <input type="text" name="search" id="searchInput" placeholder="Search hotels...">
+    <button type="submit" id="searchBtn">
+      <img src="{% static 'hotel_app/images/search.png' %}" alt="Search">
+    </button>
+  </div>
+
+  <select id="sortBy" name="sort" onchange="this.form.submit()">
     <option value="">Sort By</option>
-    <option value="low">Price: Low to High</option>
-    <option value="high">Price: High to Low</option>
-  </select>
+    <option value="low" {% if request.GET.sort == "low" %}selected{% endif %}>Price: Low to High</option>
+    <option value="high" {% if request.GET.sort == "high" %}selected{% endif %}>Price: High to Low</option>
+  </select>  
 </form>
+
 
 <div class="restaurant-slider">
     {% for hotel in Hotel %}
@@ -26,7 +34,7 @@
         <hr>
         <div class="info">
           <h3>{{ hotel.hotel_name }} – ₹ {{ hotel.hotel_price }}/-</h3>
-          <h4>Discount: ₹ {{ hotel.hotel_offer_price }} /-</h4>
+          <h4>Discount Price : ₹ {{ hotel.hotel_offer_price }} /-</h4>
           <h2>Facilities</h2>
           {% for amenetie in hotel.hotel_aminities.all %}
             <span class="amenity-badge">{{ amenetie.amenities_name }}</span>
