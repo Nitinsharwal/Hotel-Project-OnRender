@@ -56,9 +56,10 @@
   {% endif %}
 
   <div class="info">
-    <h3>{{ hotel.hotel_name }} – ₹ {{ hotel.hotel_price }}/-</h3>
-    <h4>Discount: ₹ {{ hotel.hotel_offer_price }} /-</h4>
-
+    <h3>{{ hotel.hotel_name }} – ₹ w{{ hotel.hotel_price }}/-</h3>
+    <h4>Discount Price : ₹ {{ hotel.hotel_offer_price }} /-</h4>
+    <h5>Facilities</h5>
+    
     {% for amenity in hotel.hotel_aminities.all %}
       <span class="amenity-badge">{{ amenity.amenities_name }}</span>
     {% endfor %}

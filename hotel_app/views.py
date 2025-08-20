@@ -8,8 +8,11 @@ from django.contrib import messages
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from accounts.utils import *
+from django.views.decorators.cache import cache_page
 
-@login_required(login_url='/account/login_page/')
+
+# @login_required(login_url='/account/login_page/')
+@cache_page(60 * 15)
 def home(request):
     Hotel = hotels.objects.all()
     search_query = request.GET.get('search')
