@@ -83,58 +83,49 @@
   }
   
   @media (max-width: 768px) {
-    .restaurant-slider {
-      flex-direction: column;
-      align-items: center;
-    }
-    /* table--- */
-    .bookings thead {
-    display: none;
+  .detailTable {
+    max-width: 330px;
+    overflow-x: auto;
   }
 
-  .bookings, .bookings tbody, .bookings tr, .bookings td {
-    display: block;
-    width: 97%;
+  .detailTable table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
   }
 
-  .bookings tr {
-    margin-bottom: 15px;
-    border: 1px solid #353535;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  .detailTable th,
+  .detailTable td {
     padding: 10px;
-    background-color: #bdfc78;
-  }
-
-  .bookings td {
-    border: none;
-    position: relative;
-    padding-left: 50%;
+    border: 1px solid #ddd;
     text-align: left;
   }
 
-  .bookings td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    top: 8px;
-    font-weight: bold;
-    white-space: nowrap;
+  .detailTable thead {
+    background: #222;
+    color: #fff;
   }
-  /* ------mmain */
-    .restaurant-card {
-      width: 70%;
-      margin: 0px 300px 4px 0px;
-    }
-  
-    .section-title {
-      font-size: 1.5rem;
-    }
-  
-    .section-header {
-      font-size: 1rem;
-    }
+
+  .detailTable tr:nth-child(even) {
+    background: #f9f9f9;
   }
+
+  .detailTable tr:hover {
+    background: #f1f1f1;
+  }
+
+  .detailTable th {
+    position: sticky;
+    top: 0;
+    background: #333;
+    color: #fff;
+    z-index: 1;
+  }
+}
+
+
+
+  
 table {
     width: 90%;
     margin: auto;
@@ -182,7 +173,7 @@ h2 {
       <a href="{% url "upload_images" hotel.hotel_slug %}" style="text-decoration: none;" ><button>Add Image</button></a>
     </div>
   {% endfor %}
-  <div style="overflow-x: auto;margin-right: 300px;">
+  <div class="detailTable">
   <h2>Bookings Details of Your Hotels</h2>
   <table border="1" class="bookings">
     <thead>
@@ -199,13 +190,15 @@ h2 {
     <tbody>
       {% for booking in bookings %}
       <tr>
-        <td>{{ forloop.counter }}</td>
+        <ul>
+        <li><td>{{ forloop.counter }}</td></li>
         <td>{{ booking.hotel.hotel_name }}</td>
         <td>{{ booking.customer_fname }} {{ booking.customer_lname }}</td>
         <td>{{ booking.customer_email }}</td>
         <td>{{ booking.start_date }}</td>
         <td>{{ booking.end_date }}</td>
         <td>{{ booking.payment }}</td>
+      </ul>
       </tr>
       {% empty %}
       <tr><td colspan="6">No bookings yet.</td></tr>
