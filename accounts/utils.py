@@ -12,6 +12,8 @@ def sendEmail(email, token):
     subject = "Verify your email address"
     message = f"""Hi, please verify your email before login using the link below:
 https://sharwal-nitin-hotel.vercel.app/account/verify-account/{token}
+
+Note : if your are vendor then please mail me for verifying your account.
 """
     send_mail(
         subject,
