@@ -86,9 +86,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'railway',  
         'USER': 'root',     
-        'PASSWORD': 'kzZzvjlJggXJvLlUGDJALPTcFfphVAoQ', 
-        'HOST': 'trolley.proxy.rlwy.net',
-        'PORT': '31000',                 
+        'PASSWORD': 'XSCrIuMxKLqDrlMwajbSejnVBdwSJPAw', 
+        'HOST': 'shinkansen.proxy.rlwy.net',
+        'PORT': '13080',                 
     }
 }
 
